@@ -63,7 +63,6 @@
             <p>50%</p>
           </div>
           <input
-            class="tipPercent"
             id="custom"
             oninput="tippingHandler(getTipCustom())"
             type="number"
@@ -86,8 +85,8 @@
       </div>
       <div class="hero-display">
         <div class="tip-amount display">
-          <h3>Tip Amount <br />/ person</h3>
-          <div class="tip-in-number">
+          <h3 class="resultDisplay">Tip Amount <br />/ person</h3>
+          <div class="tipValue">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="17">
               <path
                 fill="#9EBBBD"
@@ -97,9 +96,9 @@
             <p class="tip-per-person"></p>
           </div>
         </div>
-        <div class="total display">
-          <h3>Total <br />/ person</h3>
-          <div class="tip-in-number">
+        <div class="display autoMargin">
+          <h3 class="resultDisplay">Total <br />/ person</h3>
+          <div class="tipValue">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="17">
               <path
                 fill="#9EBBBD"
@@ -109,7 +108,7 @@
             <p class="tip-total"></p>
           </div>
         </div>
-        <button onclick="reset()">Reset</button>
+        <button class="reset" onclick="reset()">Reset</button>
       </div>
     </section>
     <script src="index.js"></script>

@@ -10,24 +10,31 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   background-color: hsl(185, 41%, 84%);
-  height: 100vh;
   font-family: "Space Mono", monospace;
   font-weight: 700;
+  color: hsl(184, 14%, 56%);
 }
 
-header {
+header,
+.tip-percent,
+.tipValue {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-block: 3rem;
+}
+header {
+  padding-block: 4rem;
   padding-inline: 2rem;
 }
 
 .hero {
   background-color: #fff;
   border-radius: 8px 8px 0px 0px;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -35,29 +42,24 @@ header {
 }
 
 .select-tip {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin: 1rem 0 2.5rem;
 }
 
 .tip-percent {
   border-radius: 6px;
   font-size: 1.5rem;
   background-color: hsl(183, 100%, 15%);
-  flex-basis: 44%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0.6rem 0;
-  margin: 1rem;
   color: hsl(184, 14%, 56%);
   height: 4rem;
 }
 
 #custom {
-  width: 44%;
-  margin: 1rem;
+  width: 100%;
   height: 4rem;
   font-size: 1.5rem;
 }
@@ -69,10 +71,6 @@ header {
 
 .tip-percent:last-child {
   background-color: hsl(189, 41%, 97%);
-}
-
-h2 {
-  color: hsl(184, 14%, 56%);
 }
 
 input {
@@ -113,28 +111,22 @@ input {
   justify-content: space-between;
 }
 
-.total {
+.autoMargin {
   margin-bottom: auto;
 }
 
-.display h3 {
+.resultDisplay {
   font-size: 1.2rem;
   color: hsl(184, 14%, 56%);
 }
 
-.tip-in-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tip-in-number p,
-.tip-in-number svg {
+.tipValue p,
+.tipValue svg {
   font-size: 2.5rem;
   color: hsl(172, 67%, 45%);
 }
 
-button {
+.reset {
   display: block;
   width: 100%;
   padding: 0.5rem 3rem;
@@ -142,38 +134,31 @@ button {
   color: hsl(183, 100%, 15%);
   background-color: hsl(172, 67%, 45%);
   border: 0px solid;
-  height: 3rem;
+  height: 4rem;
+  font-weight: bolder;
   text-transform: uppercase;
 }
 
 @media screen and (min-width: 720px) {
   body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 2rem;
   }
 
   header {
-    margin-top: -8rem;
+    margin-top: 5rem;
   }
 
   .hero {
-    display: flex;
     flex-direction: row;
     gap: 2rem;
     border-radius: 10px;
-    height: 55%;
-    width: 70%;
+    height: 50%;
   }
 
-  h2:last-of-type {
-    margin-top: 2rem;
-  }
-
-  input {
-    margin-top: 1rem;
+  .select-tip {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
   .hero-display,
@@ -181,31 +166,10 @@ button {
     width: 50%;
   }
 
-  .tip-percent {
-    flex-basis: 28%;
-  }
-
-  #custom {
-    width: 28%;
-  }
-
   .hero-display {
     background-color: hsl(183, 100%, 15%);
     border-radius: 10px;
     padding: 2.5rem 3rem 3rem;
     gap: 2rem;
-  }
-}
-
-@media screen and (min-width: 912px) {
-  .hero {
-    width: 60%;
-  }
-}
-
-@media screen and (min-width: 1270px) {
-  .hero {
-    width: 55%;
-    height: 50%;
   }
 }
